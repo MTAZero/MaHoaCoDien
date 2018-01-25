@@ -20,27 +20,34 @@ namespace MaHoa.Crypto
             int index = 0;
             while (index < plainText.Length)
             {
-                double[] plMa = new double[plainText.Length];
+                double[] plMa = new double[lenKey];
 
-                for(int j =1; j<=lenKey; j++)
+                Matrix plMtr = new Matrix(lenKey, lenKey);
+                for (int j = 1; j <= lenKey; j++)
                 {
-                    plMa[j - 1] = (double)(plainText[index] - 'A');
+                    if (index < plainText.Length)
+                        plMa[j - 1] = (double)(plainText[index] - 'A');
+                    else
+                        plMa[j - 1] = 0;
+
+                    if (plMa[j - 1] != -1) plMtr[j, 1] = new Complex(plMa[j - 1]); else plMtr[j, 1] = new Complex(0);
+
                     index++;
                 }
 
-                Matrix plMtr = new Matrix(plMa);
-                Matrix ansMtr = plMtr * Key;
 
-                for(int j=0; j<lenKey; j++)
+                Matrix ansMtr = Key * plMtr;
+
+                for (int j = 1; j <= lenKey; j++)
                 {
-                    int z = ((int) ansMtr[j].Re) % 26;
+                    int z = (((int)ansMtr[j,1].Re) % 26 + 26) % 26;
                     ans = ans + (char)(z + 'A');
                 }
             }
 
             return ans;
         }
-        
+
         // Giai Ma
         public static string decrypt(string CipherText, Matrix Key)
         {
@@ -54,15 +61,23 @@ namespace MaHoa.Crypto
         }
 
         // Kiem tra ma tran ngich dao co thoa man k
-        public static bool OkMatrix(Matrix a)
+        public static bool ok(Matrix a)
         {
             if (a.Determinant() == 0) return false;
             Matrix aInverse = a.Inverse();
 
-            for (int i = 1; i <= a.ColumnCount; i++)
-                for (int j = 1; j <= a.RowCount; j++)
-                    if (a[i, j].Re != Math.Round(a[i, j].Re))
-                        return false;
+            try
+            {
+                for (int i = 1; i <= a.ColumnCount; i++)
+                    for (int j = 1; j <= a.RowCount; j++)
+                        if (aInverse[i, j].Re != Math.Round(aInverse[i, j].Re))
+                            return false;
+            }
+            catch
+            {
+
+                return false;
+            }
 
             return true;
         }

@@ -38,13 +38,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnMaHoa = new DevExpress.XtraEditors.SimpleButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupKhoa = new System.Windows.Forms.GroupBox();
+            this.groupNghichDao = new System.Windows.Forms.GroupBox();
+            this.txtBanGiaiMa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTinhMaTranNghichDao = new DevExpress.XtraEditors.SimpleButton();
+            this.panelGroupKhoa = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelGroupNghichDaoKhoa = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.numRowCount = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupKhoa.SuspendLayout();
+            this.groupNghichDao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numRowCount)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -63,7 +70,7 @@
             this.btnGiaiMa.Appearance.Options.UseFont = true;
             this.btnGiaiMa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.btnGiaiMa.Image = ((System.Drawing.Image)(resources.GetObject("btnGiaiMa.Image")));
-            this.btnGiaiMa.Location = new System.Drawing.Point(750, 154);
+            this.btnGiaiMa.Location = new System.Drawing.Point(750, 73);
             this.btnGiaiMa.Name = "btnGiaiMa";
             this.btnGiaiMa.Size = new System.Drawing.Size(178, 38);
             this.btnGiaiMa.TabIndex = 6;
@@ -72,11 +79,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.simpleButton1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.numRowCount);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.btnTinhMaTranNghichDao);
+            this.groupBox1.Controls.Add(this.txtBanGiaiMa);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.groupNghichDao);
+            this.groupBox1.Controls.Add(this.groupKhoa);
             this.groupBox1.Controls.Add(this.btnMHSinhKhoaNgauNhien);
             this.groupBox1.Controls.Add(this.txtMHBanMa);
             this.groupBox1.Controls.Add(this.txtMHBanRo);
@@ -84,9 +93,9 @@
             this.groupBox1.Controls.Add(this.btnMaHoa);
             this.groupBox1.Controls.Add(this.btnGiaiMa);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(24, 34);
+            this.groupBox1.Location = new System.Drawing.Point(24, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(934, 613);
+            this.groupBox1.Size = new System.Drawing.Size(934, 633);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mã hóa dịch Hill";
@@ -97,7 +106,7 @@
             this.btnMHSinhKhoaNgauNhien.Appearance.Options.UseFont = true;
             this.btnMHSinhKhoaNgauNhien.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.btnMHSinhKhoaNgauNhien.Image = ((System.Drawing.Image)(resources.GetObject("btnMHSinhKhoaNgauNhien.Image")));
-            this.btnMHSinhKhoaNgauNhien.Location = new System.Drawing.Point(750, 204);
+            this.btnMHSinhKhoaNgauNhien.Location = new System.Drawing.Point(750, 123);
             this.btnMHSinhKhoaNgauNhien.Name = "btnMHSinhKhoaNgauNhien";
             this.btnMHSinhKhoaNgauNhien.Size = new System.Drawing.Size(178, 38);
             this.btnMHSinhKhoaNgauNhien.TabIndex = 9;
@@ -106,10 +115,10 @@
             // 
             // txtMHBanMa
             // 
-            this.txtMHBanMa.Location = new System.Drawing.Point(183, 116);
+            this.txtMHBanMa.Location = new System.Drawing.Point(183, 96);
             this.txtMHBanMa.Multiline = true;
             this.txtMHBanMa.Name = "txtMHBanMa";
-            this.txtMHBanMa.Size = new System.Drawing.Size(548, 76);
+            this.txtMHBanMa.Size = new System.Drawing.Size(548, 63);
             this.txtMHBanMa.TabIndex = 8;
             // 
             // txtMHBanRo
@@ -117,7 +126,7 @@
             this.txtMHBanRo.Location = new System.Drawing.Point(183, 27);
             this.txtMHBanRo.Multiline = true;
             this.txtMHBanRo.Name = "txtMHBanRo";
-            this.txtMHBanRo.Size = new System.Drawing.Size(548, 66);
+            this.txtMHBanRo.Size = new System.Drawing.Size(548, 56);
             this.txtMHBanRo.TabIndex = 7;
             // 
             // label1
@@ -135,7 +144,7 @@
             this.btnMaHoa.Appearance.Options.UseFont = true;
             this.btnMaHoa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.btnMaHoa.Image = ((System.Drawing.Image)(resources.GetObject("btnMaHoa.Image")));
-            this.btnMaHoa.Location = new System.Drawing.Point(750, 108);
+            this.btnMaHoa.Location = new System.Drawing.Point(750, 27);
             this.btnMaHoa.Name = "btnMaHoa";
             this.btnMaHoa.Size = new System.Drawing.Size(178, 38);
             this.btnMaHoa.TabIndex = 5;
@@ -145,58 +154,111 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 119);
+            this.label3.Location = new System.Drawing.Point(29, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Bản mã :";
             // 
-            // groupBox3
+            // groupKhoa
             // 
-            this.groupBox3.Location = new System.Drawing.Point(29, 324);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(431, 262);
-            this.groupBox3.TabIndex = 10;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Khóa ";
+            this.groupKhoa.Controls.Add(this.panelGroupKhoa);
+            this.groupKhoa.Location = new System.Drawing.Point(32, 312);
+            this.groupKhoa.Name = "groupKhoa";
+            this.groupKhoa.Size = new System.Drawing.Size(424, 306);
+            this.groupKhoa.TabIndex = 10;
+            this.groupKhoa.TabStop = false;
+            this.groupKhoa.Text = "Khóa ";
             // 
-            // groupBox2
+            // groupNghichDao
             // 
-            this.groupBox2.Location = new System.Drawing.Point(480, 324);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(437, 262);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Khóa nghịch đảo";
+            this.groupNghichDao.Controls.Add(this.panelGroupNghichDaoKhoa);
+            this.groupNghichDao.Location = new System.Drawing.Point(476, 312);
+            this.groupNghichDao.Name = "groupNghichDao";
+            this.groupNghichDao.Size = new System.Drawing.Size(430, 306);
+            this.groupNghichDao.TabIndex = 11;
+            this.groupNghichDao.TabStop = false;
+            this.groupNghichDao.Text = "Khóa nghịch đảo";
             // 
-            // textBox1
+            // txtBanGiaiMa
             // 
-            this.textBox1.Location = new System.Drawing.Point(183, 215);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(548, 76);
-            this.textBox1.TabIndex = 13;
+            this.txtBanGiaiMa.Location = new System.Drawing.Point(183, 172);
+            this.txtBanGiaiMa.Multiline = true;
+            this.txtBanGiaiMa.Name = "txtBanGiaiMa";
+            this.txtBanGiaiMa.Size = new System.Drawing.Size(548, 76);
+            this.txtBanGiaiMa.TabIndex = 13;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 215);
+            this.label2.Location = new System.Drawing.Point(29, 175);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 17);
             this.label2.TabIndex = 12;
             this.label2.Text = "Bản rõ sau khi giải mã :";
             // 
-            // simpleButton1
+            // btnTinhMaTranNghichDao
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(750, 253);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(178, 38);
-            this.simpleButton1.TabIndex = 14;
-            this.simpleButton1.Text = "Tính ma trận nghịch đảo";
+            this.btnTinhMaTranNghichDao.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTinhMaTranNghichDao.Appearance.Options.UseFont = true;
+            this.btnTinhMaTranNghichDao.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.btnTinhMaTranNghichDao.Image = ((System.Drawing.Image)(resources.GetObject("btnTinhMaTranNghichDao.Image")));
+            this.btnTinhMaTranNghichDao.Location = new System.Drawing.Point(750, 172);
+            this.btnTinhMaTranNghichDao.Name = "btnTinhMaTranNghichDao";
+            this.btnTinhMaTranNghichDao.Size = new System.Drawing.Size(178, 38);
+            this.btnTinhMaTranNghichDao.TabIndex = 14;
+            this.btnTinhMaTranNghichDao.Text = "Tính ma trận nghịch đảo";
+            this.btnTinhMaTranNghichDao.Click += new System.EventHandler(this.btnTinhMaTranNghichDao_Click);
+            // 
+            // panelGroupKhoa
+            // 
+            this.panelGroupKhoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGroupKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGroupKhoa.Location = new System.Drawing.Point(3, 20);
+            this.panelGroupKhoa.Name = "panelGroupKhoa";
+            this.panelGroupKhoa.Size = new System.Drawing.Size(418, 283);
+            this.panelGroupKhoa.TabIndex = 0;
+            // 
+            // panelGroupNghichDaoKhoa
+            // 
+            this.panelGroupNghichDaoKhoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGroupNghichDaoKhoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGroupNghichDaoKhoa.Location = new System.Drawing.Point(3, 20);
+            this.panelGroupNghichDaoKhoa.Name = "panelGroupNghichDaoKhoa";
+            this.panelGroupNghichDaoKhoa.Size = new System.Drawing.Size(424, 283);
+            this.panelGroupNghichDaoKhoa.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(29, 272);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 17);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Số cột của khóa :";
+            // 
+            // numRowCount
+            // 
+            this.numRowCount.Location = new System.Drawing.Point(183, 272);
+            this.numRowCount.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numRowCount.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numRowCount.Name = "numRowCount";
+            this.numRowCount.Size = new System.Drawing.Size(120, 24);
+            this.numRowCount.TabIndex = 16;
+            this.numRowCount.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.numRowCount.ValueChanged += new System.EventHandler(this.numRowCount_ValueChanged);
             // 
             // ucMaHoaHill
             // 
@@ -212,6 +274,9 @@
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupKhoa.ResumeLayout(false);
+            this.groupNghichDao.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numRowCount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,10 +292,14 @@
         private DevExpress.XtraEditors.SimpleButton btnMHSinhKhoaNgauNhien;
         private System.Windows.Forms.TextBox txtMHBanMa;
         private System.Windows.Forms.TextBox txtMHBanRo;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupNghichDao;
+        private System.Windows.Forms.GroupBox groupKhoa;
+        private System.Windows.Forms.TextBox txtBanGiaiMa;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnTinhMaTranNghichDao;
+        private System.Windows.Forms.FlowLayoutPanel panelGroupKhoa;
+        private System.Windows.Forms.FlowLayoutPanel panelGroupNghichDaoKhoa;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numRowCount;
     }
 }
