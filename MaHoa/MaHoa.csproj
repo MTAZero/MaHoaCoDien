@@ -84,6 +84,12 @@
     <Compile Include="GUI\ucMaHoaDichVong.Designer.cs">
       <DependentUpon>ucMaHoaDichVong.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ucMaHoaHill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\ucMaHoaHill.Designer.cs">
+      <DependentUpon>ucMaHoaHill.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ucMaHoaVirgene.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ucMaHoaDichVong.resx">
       <DependentUpon>ucMaHoaDichVong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ucMaHoaHill.resx">
+      <DependentUpon>ucMaHoaHill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ucMaHoaVirgene.resx">
       <DependentUpon>ucMaHoaVirgene.cs</DependentUpon>

@@ -13,7 +13,7 @@ namespace CSML
         /// Contains the rows of the matrix as elements, which
         /// are ArrayLists as well.
         /// </summary>
-        private ArrayList Values;
+        public ArrayList Values;
 
         /// <summary>
         /// Number of rows of the matrix.

@@ -1,5 +1,6 @@
 ﻿using CSML;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,12 @@ namespace MaHoa.Crypto
 
                 Matrix plMtr = new Matrix(plMa);
                 Matrix ansMtr = plMtr * Key;
+
+                for(int j=0; j<lenKey; j++)
+                {
+                    int z = ((int) ansMtr[j].Re) % 26;
+                    ans = ans + (char)(z + 'A');
+                }
             }
 
             return ans;
@@ -41,9 +48,23 @@ namespace MaHoa.Crypto
             string ans = "";
 
             Matrix KeyInverse = Key.Inverse();
-            
+            ans = encrypt(cipherText, KeyInverse);
 
             return ans;
+        }
+
+        // Kiem tra ma tran ngich dao co thoa man k
+        public static bool OkMatrix(Matrix a)
+        {
+            if (a.Determinant() == 0) return false;
+            Matrix aInverse = a.Inverse();
+
+            for (int i = 1; i <= a.ColumnCount; i++)
+                for (int j = 1; j <= a.RowCount; j++)
+                    if (a[i, j].Re != Math.Round(a[i, j].Re))
+                        return false;
+
+            return true;
         }
     }
 }
