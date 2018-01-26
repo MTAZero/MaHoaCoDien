@@ -70,7 +70,7 @@ namespace MaHoa.Crypto
             {
                 for (int i = 1; i <= a.ColumnCount; i++)
                     for (int j = 1; j <= a.RowCount; j++)
-                        if (aInverse[i, j].Re != Math.Round(aInverse[i, j].Re))
+                        if (Math.Abs(aInverse[i, j].Re-Math.Round(aInverse[i, j].Re))>0.00001 || aInverse[i,j].Im!=0)
                             return false;
             }
             catch
@@ -81,5 +81,7 @@ namespace MaHoa.Crypto
 
             return true;
         }
+
+        
     }
 }

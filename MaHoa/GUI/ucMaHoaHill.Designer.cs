@@ -91,7 +91,7 @@
             // 
             this.numRowCount.Location = new System.Drawing.Point(183, 272);
             this.numRowCount.Maximum = new decimal(new int[] {
-            3,
+            9,
             0,
             0,
             0});

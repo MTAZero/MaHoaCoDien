@@ -48,6 +48,7 @@
             this.btnMaHoa = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnGMThamMa = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -66,6 +67,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnGMThamMa);
             this.groupBox2.Controls.Add(this.btnGMSinhKhoaNgauNhien);
             this.groupBox2.Controls.Add(this.txtGMBanRo);
             this.groupBox2.Controls.Add(this.txtGMBanMa);
@@ -250,6 +252,19 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Bản mã :";
             // 
+            // btnGMThamMa
+            // 
+            this.btnGMThamMa.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGMThamMa.Appearance.Options.UseFont = true;
+            this.btnGMThamMa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.btnGMThamMa.Image = ((System.Drawing.Image)(resources.GetObject("btnGMThamMa.Image")));
+            this.btnGMThamMa.Location = new System.Drawing.Point(750, 107);
+            this.btnGMThamMa.Name = "btnGMThamMa";
+            this.btnGMThamMa.Size = new System.Drawing.Size(178, 38);
+            this.btnGMThamMa.TabIndex = 13;
+            this.btnGMThamMa.Text = "Thám mã";
+            this.btnGMThamMa.Click += new System.EventHandler(this.btnGMThamMa_Click);
+            // 
             // ucMaHoaDichVong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -290,5 +305,6 @@
         private System.Windows.Forms.TextBox txtMHBanRo;
         private System.Windows.Forms.TextBox txtMHKey;
         private DevExpress.XtraEditors.SimpleButton btnGMSinhKhoaNgauNhien;
+        private DevExpress.XtraEditors.SimpleButton btnGMThamMa;
     }
 }

@@ -26,7 +26,16 @@ namespace MaHoa.GUI
         #region Sự kiện
         private void btnMaHoa_Click(object sender, EventArgs e)
         {
-            txtMHBanRo.Text = txtMHBanRo.Text.Trim();
+            txtMHBanRo.Text = txtMHBanRo.Text.ToUpper();
+            string tz = txtMHBanRo.Text;
+            string kz = "";
+            for(int iz = 0; iz<tz.Length; iz++)
+            {
+                if (tz[iz] < 'A' || tz[iz] > 'Z') continue;
+                kz = kz + tz[iz]; 
+            }
+            txtMHBanRo.Text = kz;
+
             if (txtMHBanRo.Text == "")
             {
                 MessageBox.Show("Bản rõ đang trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -72,7 +81,13 @@ namespace MaHoa.GUI
             Random rd = new Random();
 
             int k = (int)numRowCount.Value;
-            
+
+            if (k > 5)
+            {
+                MessageBox.Show("Chỉ có thể sinh mã có độ dài <=5", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             while (true)
             {
                 mt = new Matrix(k, k);
@@ -85,7 +100,9 @@ namespace MaHoa.GUI
                         mt[i, j] = new Complex(gt);
                     }
                 //break;
-                if (MaHoa.Crypto.Hill.ok(mt)) break;
+                if (MaHoa.Crypto.Hill.ok(mt) && MaHoa.Crypto.Hill.ok(mt.Inverse())) break;
+
+
             }
 
             /// cập nhật giá trị mã sinh ra
@@ -231,28 +248,6 @@ namespace MaHoa.GUI
         {
             int k = (int) numRowCount.Value;
 
-            Matrix mt = new Matrix(k,k);
-            /// tính lại mt
-            foreach (var item in panelGroupKhoa.Controls)
-            {
-                TextBox z = item as TextBox;
-
-                Point pos = (Point)z.Tag;
-                if (pos.X > k || pos.Y > k) continue;
-
-                int gt = 0;
-                try
-                {
-                    gt = Int32.Parse(z.Text);
-                }
-                catch
-                {
-                    gt = 0;
-                }
-                mt[pos.X, pos.Y] = new Complex(gt);
-
-            }
-
             /// ma trận nghịch đảo
             Matrix nd = mt.Inverse();
             foreach (var item in panelGroupNghichDaoKhoa.Controls)
@@ -261,8 +256,7 @@ namespace MaHoa.GUI
 
                 Point pos = (Point)z.Tag;
                 if (pos.X > k || pos.Y > k) continue;
-                z.Text = Math.Round(nd[pos.X, pos.Y].Re).ToString("0.");
-
+                z.Text = Math.Round(nd[pos.X, pos.Y].Re).ToString();
             }
         }
     }

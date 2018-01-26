@@ -82,7 +82,7 @@ namespace MaHoa.GUI
                 return;
             }
 
-            txtGMBanRo.Text = Ceasar.decrypt(txtMHBanMa.Text, Int32.Parse(txtGMKhoa.Text));
+            txtGMBanRo.Text = Ceasar.decrypt(txtGMBanMa.Text, Int32.Parse(txtGMKhoa.Text));
             //MessageBox.Show("Giải mã thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -93,5 +93,16 @@ namespace MaHoa.GUI
             txtGMKhoa.Text = key.ToString();
         }
         #endregion
+
+        private void btnGMThamMa_Click(object sender, EventArgs e)
+        {
+            if (txtGMBanMa.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập bản rõ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            txtGMBanRo.Text = Ceasar.decrypt(txtGMBanMa.Text);
+        }
     }
 }
