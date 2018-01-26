@@ -48,7 +48,7 @@ namespace MaHoa.GUI
             }
 
             txtMHBanMa.Text = Ceasar.encrypt(txtMHBanRo.Text, Int32.Parse(txtMHKey.Text));
-            MessageBox.Show("Mã hóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show("Mã hóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnMHSinhKhoaNgauNhien_Click(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace MaHoa.GUI
             }
 
             txtGMBanRo.Text = Ceasar.decrypt(txtMHBanMa.Text, Int32.Parse(txtGMKhoa.Text));
-            MessageBox.Show("Giải mã thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show("Giải mã thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnGMSinhKhoaNgauNhien_Click(object sender, EventArgs e)

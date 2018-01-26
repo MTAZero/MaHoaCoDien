@@ -96,8 +96,6 @@ namespace MaHoa.GUI
                 Point pos = (Point)z.Tag;
                 if (pos.X > k || pos.Y > k) continue;
                 z.Text = mt[pos.X, pos.Y].Re.ToString();
-
-
             }
 
             

@@ -38,7 +38,7 @@ namespace MaHoa.GUI
             }
 
             txtMHBanMa.Text = Virgene.encrypt(txtMHBanRo.Text, txtMHKey.Text);
-            MessageBox.Show("Mã hóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show("Mã hóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnMHSinhKhoaNgauNhien_Click(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace MaHoa.GUI
             }
 
             txtGMBanRo.Text = Virgene.decrypt(txtMHBanMa.Text, txtGMKhoa.Text);
-            MessageBox.Show("Giải mã thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show("Giải mã thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnGMSinhKhoaNgauNhien_Click(object sender, EventArgs e)
