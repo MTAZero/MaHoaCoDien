@@ -249,15 +249,31 @@ namespace MaHoa.GUI
             int k = (int) numRowCount.Value;
 
             /// ma trận nghịch đảo
-            Matrix nd = mt.Inverse();
-            foreach (var item in panelGroupNghichDaoKhoa.Controls)
+            try
             {
-                TextBox z = item as TextBox;
+                Matrix nd = mt.Inverse();
+                foreach (var item in panelGroupNghichDaoKhoa.Controls)
+                {
+                    TextBox z = item as TextBox;
 
-                Point pos = (Point)z.Tag;
-                if (pos.X > k || pos.Y > k) continue;
-                z.Text = Math.Round(nd[pos.X, pos.Y].Re).ToString();
+                    Point pos = (Point)z.Tag;
+                    if (pos.X > k || pos.Y > k) continue;
+                    z.Text = Math.Round(nd[pos.X, pos.Y].Re).ToString();
+                }
             }
+            catch { }
+        }
+
+        private void btnThamMa_Click(object sender, EventArgs e)
+        {
+            txtMHBanMa.Text = txtMHBanMa.Text.Trim();
+            if (txtMHBanMa.Text == "")
+            {
+                MessageBox.Show("Bản mã đang trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            txtBanGiaiMa.Text = Hill.decrypt(txtMHBanMa.Text, "VJHACFCAVMUQBEQNDBPSKCDBIBWJAENNDYYGBEKWXXYOZAPMEVCFRJEWOMAN", "THEFREQUENCYOFLETTERSATTHEBEGINNINGSOFWORDSISDIFFERENTAGAINA");
         }
     }
 }

@@ -47,6 +47,7 @@
             this.btnMaHoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnGiaiMa = new DevExpress.XtraEditors.SimpleButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnThamMa = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRowCount)).BeginInit();
@@ -66,6 +67,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnThamMa);
             this.groupBox1.Controls.Add(this.numRowCount);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btnTinhMaTranNghichDao);
@@ -260,6 +262,19 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Bản mã :";
             // 
+            // btnThamMa
+            // 
+            this.btnThamMa.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThamMa.Appearance.Options.UseFont = true;
+            this.btnThamMa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.btnThamMa.Image = ((System.Drawing.Image)(resources.GetObject("btnThamMa.Image")));
+            this.btnThamMa.Location = new System.Drawing.Point(750, 216);
+            this.btnThamMa.Name = "btnThamMa";
+            this.btnThamMa.Size = new System.Drawing.Size(178, 38);
+            this.btnThamMa.TabIndex = 17;
+            this.btnThamMa.Text = "Thám mã";
+            this.btnThamMa.Click += new System.EventHandler(this.btnThamMa_Click);
+            // 
             // ucMaHoaHill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -301,5 +316,6 @@
         private System.Windows.Forms.FlowLayoutPanel panelGroupNghichDaoKhoa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numRowCount;
+        private DevExpress.XtraEditors.SimpleButton btnThamMa;
     }
 }
